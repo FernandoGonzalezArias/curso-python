@@ -14,5 +14,6 @@ print(menu)
 
 numero_1 = 1
 numero_2 = 3
+numero_3 = 4
 resultado = (numero_1 * numero_2) +100
 print(resultado)
