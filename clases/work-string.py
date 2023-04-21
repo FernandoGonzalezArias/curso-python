@@ -90,6 +90,7 @@ print(list_to_convert)
 tuple_converter = tuple(list_to_convert)
 print(tuple_converter)
 
+# revertir una lista y trsnaformarla en tupla
 la_tupla = [1, 2, 3, 4 ]
 revertir_la_tupla = reversed(la_tupla)
 print(la_tupla)
