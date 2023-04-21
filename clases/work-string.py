@@ -54,3 +54,43 @@ print(list("concurso"))
 #Range(), un rango cconvertido en una lista de numeros
 range_one = range(10)
 print(list(range_one))
+
+#agregar un item a la lista append()
+numeros = [1, 4, 6]
+print(numeros)
+numeros.append(10)
+print(numeros)
+# como seleccionar o extraer un iten de la lista, con la posicion, lista[posicion]
+print(numeros[2])
+# como recorrer la lista con For y Range
+for i in range(len(numeros)):
+ print(numeros[i])
+#como eliminar un elemento de la lista  con remove()
+numeros.remove(4)
+print(numeros)
+#modificar la lista, a la variable se escribe al lado el indice del numero cual cambiar
+numeros[0] = 5
+print(numeros)
+
+print("=============== TUPLAS ==================")
+
+#TUPLAS: son inmutables, no se pueden cambiar y en ves de cerrar asi [] se cierra con (), es como constante
+empy_tupla = ()
+second = (1, "a", 90)
+print(empy_tupla, second)
+
+one_tuple = ('Fernando',)  # para que sea tuple y no string se tiene que terminar con una coma ,
+print(type(one_tuple))
+
+emty_tuple_2 = tuple()  # tuple vacia
+
+# una lista la transdormo en tuple
+list_to_convert = [2, 6, 8, 9]
+print(list_to_convert)
+tuple_converter = tuple(list_to_convert)
+print(tuple_converter)
+
+la_tupla = [1, 2, 3, 4 ]
+revertir_la_tupla = reversed(la_tupla)
+print(la_tupla)
+print(list(revertir_la_tupla))
