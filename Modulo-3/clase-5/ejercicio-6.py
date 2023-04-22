@@ -21,3 +21,5 @@ def cantidad_de_agua(carga_lavadora, cantidad_ropa):
 
     # Devolvemos la cantidad de agua necesaria
     return agua_necesaria
+
+cantidad_de_agua()

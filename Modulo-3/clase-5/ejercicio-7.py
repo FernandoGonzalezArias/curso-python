@@ -18,5 +18,7 @@ def notaFinal():
         return 75
     else:
         return 0
+    
+notaFinal()
 
 
