@@ -18,7 +18,10 @@ def notaFinal():
         return 75
     else:
         return 0
-    
+
+calificacion_final = notaFinal()
+print("La calificación final del estudiante es:", calificacion_final)
+
 notaFinal()
 
 
