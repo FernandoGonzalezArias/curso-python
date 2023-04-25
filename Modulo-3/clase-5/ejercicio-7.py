@@ -22,6 +22,6 @@ def notaFinal():
 calificacion_final = notaFinal()
 print("La calificación final del estudiante es:", calificacion_final)
 
-notaFinal()
+
 
 

@@ -16,10 +16,4 @@ def cantidad_de_agua(carga_lavadora, cantidad_ropa):
     # Definimos la cantidad de agua necesaria por kilogramo de ropa para cada tipo de tela
     agua_por_kg = {"algodon": 5, "nylon": 4, "poliester": 3}
 
-    # Calculamos la cantidad de agua necesaria para la cantidad de ropa dada
-    agua_necesaria = agua_por_kg[tipo_tela] * carga_lavadora ** (cantidad_ropa / 10)
-
-    # Devolvemos la cantidad de agua necesaria
-    return agua_necesaria
-
-cantidad_de_agua()
+cantidad_de_agua( )
