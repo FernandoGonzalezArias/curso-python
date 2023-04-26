@@ -23,9 +23,11 @@ class MobilePhone:
     def power_on(self):
         self.status = True
         print("Celular prendido")
+    
     def power_off(self):
         self.status = False
         print("Celular apagado")
+   
     def install_app(self, app):
         self.apps.append(app)
     
@@ -41,10 +43,11 @@ cel.power_on()
 
 cel.install_app('WhatsApp')
 cel.install_app('Facebook')
+cel.install_app('Teams')
 print("Apps instaladas: ", cel.apps)
 
 cel.uninstall_app('Facebook')
-print("Apps instaladas despues de desinstalar Facebook: ", cel.apps)
+print("Apps despues de desinstalar Facebook: ", cel.apps)
 
 cel.power_off()
 
