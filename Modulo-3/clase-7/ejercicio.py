@@ -34,11 +34,10 @@ class MobilePhone:
             self.apps.remove(app)
 
 
-cel = MobilePhone('China', 7.5 , 8)
+cel = MobilePhone('Hecho en China', [7.5, 'pulgadas']  , [8, 'Nucleos'])
 print("Caracteristicas: ", cel.manufacturer, cel.screen_size, cel.num_cores)
 
 cel.power_on()
-# 
 
 cel.install_app('WhatsApp')
 cel.install_app('Facebook')
