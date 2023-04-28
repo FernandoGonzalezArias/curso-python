@@ -16,15 +16,15 @@ class Motocicleta():
 
     def arrancar(self):
         if self.motor:
-            print("Se escucha un molesto sonido al girar la llave. El motor ya estaba arrancado.")
+            print(" El motor ya estaba arrancado.")
         else:
-            print("Se ha arrancado el motor. Ruge como un león.")
+            print("Se ha arrancado el motor")
     
     def detener(self):
         if self.motor:
             print("Se detiene el motor.")
         else:
-            print("No puedes parar el motor, porque ya está apagado. ¿No lo oyes?")
+            print("No puedes parar el motor, porque ya está apagado.")
 
     def consulta_precio(self):
         print(f"El precio de la motocicleta {self.marca} {self.modelo} es de {self.precio} $.")
@@ -49,18 +49,18 @@ class Motocicleta():
             else:
                 print("Excede el maximo de litros")
 
-moto_1 = Motocicleta("Roja y blanca", "45663-FHDY", 10, 2, "Yamaha", "YZF-R1", "20/02/2020", 288, 199, 17)
+moto_1 = Motocicleta("Negra", "xxx-xxx", 10, 2, "Susuki", "R1r2", "19/05/2022", 258, 200, 17)
 
 moto_2 = Motocicleta(
-    matricula="48659-FHEZ", 
+    matricula="yyy-yyy", 
     combustible_litros=0, 
-    color="Negra", 
-    marca="Harley Davidson", 
-    modelo="Fat Boy",  
+    color="Blanca", 
+    marca="Honda", 
+    modelo="Nose",  
     numero_ruedas=2, 
-    peso=304, 
-    fecha_fabricacion="29/09/2020", 
-    velocidad_punta=160,
+    peso=350, 
+    fecha_fabricacion="30/04/2021", 
+    velocidad_punta=200,
     combustible_maximo=20
     )
 
