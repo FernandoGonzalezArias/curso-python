@@ -22,15 +22,12 @@ class CuentaBancaria:
         for movimiento in self.movimientos:
             print(f'{self.movimientos.index(movimiento)+1:<11} {movimiento[0]:<15} {movimiento[1]:<17} {movimiento[2]:<17} {movimiento[3]}')
 
-# Pedimos al usuario que ingrese los datos de la cuenta
 titular = input('Ingrese el nombre del titular de la cuenta: ')
 numero = input('Ingrese el número de la cuenta: ')
 saldo_inicial = float(input('Ingrese el saldo inicial de la cuenta: '))
 
-# Creamos la cuenta bancaria
 cuenta1 = CuentaBancaria(titular, numero, saldo_inicial)
 
-# Pedimos al usuario que ingrese los movimientos de la cuenta
 while True:
     print('Ingrese un movimiento de la cuenta:')
     tipo_movimiento = input('Abono o Retiro? ')
@@ -45,12 +42,10 @@ while True:
     else:
         print('Error: Tipo de movimiento inválido')
     
-    # Preguntamos al usuario si desea agregar otro movimiento
     respuesta = input('Desea agregar otro movimiento? (S/N) ')
     if respuesta.lower() == 'n':
         break
 
-# Imprimimos el estado de cuenta final
 cuenta1.imprimir_estado_cuenta()
 
 
