@@ -1,4 +1,4 @@
-num_a = 5
-num_b = 7
+num_a = float(input("Introduce el primer numero : "))
+num_b = float(input("Introduce el segundo numero : "))
 resultado = num_a + num_b
 print(f'La suma de {num_a} + {num_b} es: {resultado} ')
