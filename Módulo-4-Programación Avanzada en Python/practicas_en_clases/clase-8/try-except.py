@@ -48,11 +48,10 @@ class EjemploTypeError:
         except TypeError:
             print("Error: ¡Tipo de operando no admitido!")
 
-# Ejemplo de uso
 ejemplo = EjemploTypeError(5)
 
-ejemplo.multiplicar(2)        # Multiplicación exitosa entre un entero y otro entero
-ejemplo.multiplicar("hola")   # Genera un TypeError al intentar multiplicar un entero con una cadena
+ejemplo.multiplicar(2)       
+ejemplo.multiplicar("hola")    
 
 
 print("--------------------------------------------------------")
