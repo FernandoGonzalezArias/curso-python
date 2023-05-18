@@ -8,11 +8,10 @@ class EjemploIndexError:
             elemento = self.datos[indice]
             print("El elemento en el índice {} es: {}".format(indice, elemento))
         except IndexError:
-            print("Error: ¡Índice fuera de rango!")
+            print("Índice fuera de rango")
 
 lista_datos = [1, 2, 3]
 ejemplo = EjemploIndexError(lista_datos)
-
 ejemplo.acceder_elemento(0)  
 ejemplo.acceder_elemento(5)  
 
@@ -26,12 +25,11 @@ class EjemploKeyError:
             valor = self.diccionario[clave]
             print("El valor para la clave '{}' es: {}".format(clave, valor))
         except KeyError:
-            print("Error: ¡Clave no encontrada!")
+            print("Clave no encontrada")
 
 
 datos_dict = {"a": 1, "b": 2, "c": 3}
 ejemplo = EjemploKeyError(datos_dict)
-
 ejemplo.acceder_valor("a")  
 ejemplo.acceder_valor("d") 
 
@@ -46,13 +44,11 @@ class EjemploTypeError:
             resultado = self.valor * multiplicador
             print("El resultado de la multiplicación es:", resultado)
         except TypeError:
-            print("Error: ¡Tipo de operando no admitido!")
+            print("Tipo de operando no admitido")
 
 ejemplo = EjemploTypeError(5)
-
 ejemplo.multiplicar(2)       
 ejemplo.multiplicar("hola")    
-
 
 print("--------------------------------------------------------")
 
