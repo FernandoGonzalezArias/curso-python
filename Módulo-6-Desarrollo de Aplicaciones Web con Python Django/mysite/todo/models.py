@@ -17,7 +17,7 @@ class State(models.Model):
     def __str__(self):
         return f"name: {self.name}, color: {self.color}, isDone: {self.idDone}"
     
-class Author(models.model):
+class Author(models.Model):
     first_name = models.CharField(max_length=15)
     last_name = models.CharField(max_length=15)
     
