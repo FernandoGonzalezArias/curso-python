@@ -2,12 +2,12 @@ from django.db import models
 from django.urls import reverse
 from core.settings import AUTH_USER_MODEL
 
-# Create your models here.
 class State(models.Model):
     
     name = models.CharField(max_length=20)
     color = models.CharField(max_length=6)
     idDone = models.BooleanField()
+   
     
     class Meta:
         ordering = ["name"]

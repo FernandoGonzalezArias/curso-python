@@ -2,6 +2,18 @@ from django.contrib import admin
 
 from tasks.models import Task, State, Comments
 
-admin.site.register(Task)
-admin.site.register(State)
-admin.site.register(Comments)
+class StateAdmin(admin.ModelAdmin):
+    list_display = ('name', 'color')
+    
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'user', 'state')
+    list_filter = ('titulo', 'user')
+    search_fields = ('titulo', 'due_task')
+    
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ('task', 'body')
+    
+
+admin.site.register(Task, TaskAdmin)
+admin.site.register(State, StateAdmin)
+admin.site.register(Comments, CommentsAdmin)
