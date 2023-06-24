@@ -6,7 +6,7 @@ class StateAdmin(admin.ModelAdmin):
     list_display = ('name', 'color')
     
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'user', 'state')
+    list_display = ('titulo', 'user', 'state_name')
     list_filter = ('titulo', 'user')
     search_fields = ('titulo', 'due_task')
     

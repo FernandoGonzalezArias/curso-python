@@ -26,6 +26,9 @@ class Task(models.Model):
     
     class Meta:
         ordering = ["state", "user", "titulo", "due_task"]
+        
+    def state_name(self):
+        return self.state.name
 
     def get_absoluted_url(self):
         return reverse('task', args=[str(self.id)])
