@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from . import models
 
 
 def books_list(request):
-    context = {'valores':[0,1,2,3,4,5], 'name': 'Fernando Gonzalez'}
+    books = models.Book.objects.all()
+    context = {'books':books}
     return render(request, 'books_list.html', context)

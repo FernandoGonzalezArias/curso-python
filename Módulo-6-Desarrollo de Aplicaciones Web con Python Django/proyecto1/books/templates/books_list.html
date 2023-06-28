@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Book List 
+Listado de libros 
 {% endblock %}
 
 {% block content %}
-<div>Hola {{name}}</div>
-    {% for valor in valores %}
-        <div>
+        {% for book in books %}
             <p>
-                {{valor}}
+                {{book.titulo}}
             </a>
-        </div>
-    {% endfor %}
-</div>
+        {% endfor %}
 {% endblock %}
