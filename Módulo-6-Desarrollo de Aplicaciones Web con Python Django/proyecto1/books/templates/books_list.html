@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Book List 
+{% endblock %}
+
+{% block content %}
+<div>Hola {{name}}</div>
+    {% for valor in valores %}
+        <div>
+            <p>
+                {{valor}}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
