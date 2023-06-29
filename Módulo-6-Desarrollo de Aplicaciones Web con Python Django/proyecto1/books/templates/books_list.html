@@ -5,9 +5,23 @@ Listado de libros
 {% endblock %}
 
 {% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Editorial</th>
+            <th colspan="2">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for book in books %}
-            <p>
-                {{book.titulo}}
-            </a>
+        <tr>
+            <td> <a href="{{book.id}}">{{book.titulo}}</a> </td>
+            <td> <a href="/books/{{book.id}}">{{book.editorial}}</a> </td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
         {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
