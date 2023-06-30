@@ -26,3 +26,11 @@ def  new_book(request):
         #ir al formulario
         form = BookForm()
         return render(request, 'new_book.html', {'form': form})
+    
+def edit_book(request, pk):
+    book = Book.objects.get(pk = pk)
+    form = BookForm(request.POST, instance = book)
+    if form.is_valid():
+        form.save()
+        return redirect('/books')
+    return render(request, 'edit_book.html', {'book': book})

@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<form method="POST" action="">
+      
+<form method="POST" action="edit">
     {% csrf_token %}
     <div class="form-group">
         <label for="exampleInputText">Título</label>
         <input type="text" class="form-control" name="titulo" id="titulo"
-            placeholder="Titulo del libro">
-            <!-- {{form.titulo}} -->
+            placeholder="Titulo del libro" value="{{book.titulo}}">
+            
     </div>
 
     <div class="form-group">
         <label for="exampleInputtext2">Editorial</label>
         <input type="Text" class="form-control" name="editorial" id="editorial"
-            placeholder="Editorial del libro">
-        <!-- {{form.editorial}} -->
+            placeholder="Editorial del libro" value="{{book.editorial}}">
+        
     </div>
 
-    <button type="submit" class="btn btn-primary">Agregar Libro</button>
+    <button type="submit" class="btn btn-primary">Actualizar libro</button>
 </form>
+
+
 
 {% endblock %}

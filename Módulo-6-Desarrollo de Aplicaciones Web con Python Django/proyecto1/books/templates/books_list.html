@@ -5,7 +5,7 @@ Listado de libros
 {% endblock %}
 
 {% block content %}
-<a href="new" class="btn btn-primary mb-2">Crear Book</a>
+<a href="new" class="btn btn-primary mb-2">Agregar libro</a>
 
 <table class="table">
     <thead>
@@ -20,7 +20,7 @@ Listado de libros
         <tr>
             <td> <a href="{{book.id}}">{{book.titulo}}</a> </td>
             <td> <a href="/books/{{book.id}}">{{book.editorial}}</a> </td>
-            <td>Edit</td>
+            <td> <a href="/books/{{book.id}}/edit">Edit</a> </td>
             <td>Delete</td>
         </tr>
         {% endfor %}
