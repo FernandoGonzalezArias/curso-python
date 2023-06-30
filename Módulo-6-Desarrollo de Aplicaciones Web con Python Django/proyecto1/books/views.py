@@ -34,3 +34,9 @@ def edit_book(request, pk):
         form.save()
         return redirect('/books')
     return render(request, 'edit_book.html', {'book': book})
+
+def destroy(request, pk):
+    book = Book.objects.get(pk = pk)
+    book.delete()
+    return redirect('/books')
+    

@@ -21,7 +21,7 @@ Listado de libros
             <td> <a href="{{book.id}}">{{book.titulo}}</a> </td>
             <td> <a href="/books/{{book.id}}">{{book.editorial}}</a> </td>
             <td> <a href="/books/{{book.id}}/edit">Edit</a> </td>
-            <td>Delete</td>
+            <td> <a href="/books/{{book.id}}/delete">Delete</a> </td>
         </tr>
         {% endfor %}
     </tbody>
