@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleInputText">Título</label>
+        <input type="text" class="form-control" name="titulo" id="titulo"
+            placeholder="Titulo del libro">
+            <!-- {{form.titulo}} -->
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputtext2">Editorial</label>
+        <input type="Text" class="form-control" name="editorial" id="editorial"
+            placeholder="Editorial del libro">
+        <!-- {{form.editorial}} -->
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Libro</button>
+</form>
+
+{% endblock %}
