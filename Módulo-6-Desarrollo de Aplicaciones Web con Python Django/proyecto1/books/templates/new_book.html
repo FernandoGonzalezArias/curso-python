@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<form method="POST" action="">
+<form method="POST" action="new">
     {% csrf_token %}
     <div class="form-group">
         <label for="exampleInputText">Título</label>
-        <input type="text" class="form-control" name="titulo" id="titulo"
+        <input type="text" class="form-control" name="titulo" id="id_titulo"
             placeholder="Titulo del libro">
             <!-- {{form.titulo}} -->
     </div>
 
     <div class="form-group">
         <label for="exampleInputtext2">Editorial</label>
-        <input type="Text" class="form-control" name="editorial" id="editorial"
+        <input type="text" class="form-control" name="editorial" id="id_editorial"
             placeholder="Editorial del libro">
         <!-- {{form.editorial}} -->
     </div>
