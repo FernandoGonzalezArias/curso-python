@@ -13,6 +13,13 @@ class Book(models.Model):
         ('r', 'Reservado')
     )
     state = models.CharField(max_length=1, choices=STATUS, blank=True, default='a')
+    
+    TIPOS_BOOK = [
+        ('p', 'Pasta'),
+        ('D', 'Digital')
+    ]
+    
+    type = models.CharField(max_length=1, choices=TIPOS_BOOK, blank=True, default='P')
 
     class Meta:
         ordering = ["titulo"]
