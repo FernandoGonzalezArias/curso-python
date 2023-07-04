@@ -5,20 +5,26 @@
 <form method="POST" action="new">
     {% csrf_token %}
     <div class="form-group">
-        <label for="exampleInputText">Título</label>
+        <label for="titulo">Título</label>
         <input type="text" class="form-control" name="titulo" id="id_titulo"
             placeholder="Titulo del libro">
             <!-- {{form.titulo}} -->
     </div>
 
     <div class="form-group">
-        <label for="exampleInputtext2">Editorial</label>
+        <label for="editorial">Editorial</label>
         <input type="text" class="form-control" name="editorial" id="id_editorial"
             placeholder="Editorial del libro">
         <!-- {{form.editorial}} -->
     </div>
 
-    <button type="submit" class="btn btn-primary">Agregar Libro</button>
+    <div class="form-group">
+        <label for="state">Estado</label>
+        <!-- <input type="text" class="form-control" name="state" id="id_state" value=" {{book.state}} "> -->
+            {{form.state}}
+    </div>
+
+    <button type="submit" class="btn btn-primary m-2" >Agregar Libro</button>
 </form>
 
 {% endblock %}

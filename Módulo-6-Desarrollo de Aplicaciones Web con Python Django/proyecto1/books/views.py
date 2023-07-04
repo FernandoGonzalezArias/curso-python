@@ -41,7 +41,7 @@ def edit_book(request, pk):
         form.save()
         sweetify.toast(request, 'El libro se edito correctamente', icon="success", timer=3000)
         return redirect('/books')
-    return render(request, 'edit_book.html', {'book': book})
+    return render(request, 'edit_book.html', {'book': book, 'states': Book.STATUS})
 
 def destroy(request, pk):
     book = Book.objects.get(pk = pk)

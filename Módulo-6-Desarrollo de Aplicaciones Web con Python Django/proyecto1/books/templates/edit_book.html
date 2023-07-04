@@ -15,12 +15,17 @@
         <label for="exampleInputtext2">Editorial</label>
         <input type="Text" class="form-control" name="editorial" id="editorial"
             placeholder="Editorial del libro" value="{{book.editorial}}">
-        
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputtext2">State</label>
+        <select name="state" id="id_state">
+            {% for id, value in states %}
+            <option value="{{id}}" {% if book.state == id %} selected="selected" {% endif %}> {{value}} </option>
+            {% endfor %}
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary">Actualizar libro</button>
 </form>
-
-
-
 {% endblock %}

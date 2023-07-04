@@ -6,6 +6,13 @@ class Book(models.Model):
     
     titulo = models.CharField(max_length=20)
     editorial = models.CharField(max_length=20)
+    
+    STATUS = (
+        ('a', 'Activo'),
+        ('m', 'Mantenimiento'),
+        ('r', 'Reservado')
+    )
+    state = models.CharField(max_length=1, choices=STATUS, blank=True, default='a')
 
     class Meta:
         ordering = ["titulo"]
