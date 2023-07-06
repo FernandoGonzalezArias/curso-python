@@ -18,7 +18,7 @@
     </div>
 
     <div class="form-group">
-        <label for="exampleInputtext2">State</label>
+        <label for="exampleInputtext2">Estado</label>
         <select name="state" id="id_state">
             {% for id, value in states %}
             <option value="{{id}}" {% if book.state == id %} selected="selected" {% endif %}> {{value}} </option>
@@ -26,12 +26,25 @@
         </select>
     </div>
 
+    <label > Tipo favorito</label>
     {% for id, value in type %}
     <div class="form-check">
         <input type="radio" class="form-check-input" name="type" id="id_type_{{forloop.counter0}}"   {% if book.type == id %} checked {% endif %} value=" {{id}} " >
         <label for="exampleRadios1" class="form-check-label"> {{value}} </label>
     </div>
     {% endfor %}
+
+    <label > Colores favoritos</label>
+    {% for id, value in colors %}
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="favorite_color" id="id_favorite_color{{forloop.counter0}}"   {% if id in selected_colors %} checked {% endif %} value=" {{id}} " >
+        <label for="exampleRadios1" class="form-check-label"> {{value}} </label>
+    </div>
+    {% endfor %}
+    
+
+
+
     <button type="submit" class="btn btn-primary">Actualizar libro</button>
 </form>
 {% endblock %}
