@@ -20,15 +20,23 @@ def book_detail(request, pk):
 
 def  new_book(request):
     if request.method == 'POST':
-        #gusradr nuevo book
-        form = BookForm(request.POST)
-        print(f'** {form.is_valid()}')
-        if form.is_valid():
-            form.save()
-            sweetify.success(request, 'El libro se creo correctamente')
-            return redirect('/books')
-        else:
-             print(f'** {form.errors}')
+        #guardar nuevo book
+        values = request.POST.getlist('favorite_color')
+        colors = ",".join(values)
+        editorial = request.POST['editorial']
+        state = request.POST['state']
+        type_form = request.POST['type']
+        titulo = request.POST['titulo']
+        obj1 = Book(
+            editorial = editorial,
+            state = state,
+            type = type_form,
+            favorite_color = colors,
+            titulo = titulo
+        )
+        obj1.save()
+        sweetify.success(request, 'El libro se creo correctamente')
+        return redirect('/books')
     else:
         #ir al formularios
         form = BookForm()

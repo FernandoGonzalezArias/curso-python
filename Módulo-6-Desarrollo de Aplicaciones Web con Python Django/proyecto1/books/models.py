@@ -20,6 +20,16 @@ class Book(models.Model):
     ]
     
     type = models.CharField(max_length=1, choices=TIPOS_BOOK, blank=True, default='P')
+    
+    COLORS = (
+        (1, 'Azul'),
+        (2, 'Rojo'),
+        (3, 'Amarillo'),
+        (4, 'Verde')
+    )
+    
+    favorite_color = models.CharField(max_length=225, choices=COLORS, blank=True, default='')
+
 
     class Meta:
         ordering = ["titulo"]
