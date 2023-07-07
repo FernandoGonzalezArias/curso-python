@@ -8,6 +8,11 @@ import sweetify
 
 
 def books_list(request):
+    num_session = request.session.get('numero_visitas', 0)
+    request.session['numero_visitas']= num_session + 1
+    print('numero de visitas = ', num_session + 1)
+    
+    
     books = models.Book.objects.all()
     context = {'books':books}
     return render(request, 'books_list.html', context)

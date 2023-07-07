@@ -62,7 +62,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'core/static')
+            os.path.join(BASE_DIR, 'core/static'),
+            './templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -144,3 +145,6 @@ except Exception as e:
     pass
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+LOGIN_REDIRECT_URL = '/books'
+
