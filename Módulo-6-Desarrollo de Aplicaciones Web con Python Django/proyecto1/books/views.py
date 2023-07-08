@@ -5,15 +5,18 @@ from .models import Book
 from.forms import BookForm
 from django.contrib import messages
 import sweetify
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.models import Permission
+
+
+@login_required
 
 
 def books_list(request):
     num_session = request.session.get('numero_visitas', 0)
     request.session['numero_visitas']= num_session + 1
     print('numero de visitas = ', num_session + 1)
-    
-    
-    books = models.Book.objects.all()
+    books = models.Book.objects.filter(owner = request.user)
     context = {'books':books}
     return render(request, 'books_list.html', context)
 
@@ -22,6 +25,7 @@ def book_detail(request, pk):
     context = {'book': book}
     return render(request, 'books_detail.html', context)
 
+@permission_required('books.add_book')
 def  new_book(request):
     if request.method == 'POST':
         #guardar nuevo book
@@ -36,7 +40,8 @@ def  new_book(request):
             state = state,
             type = type_form,
             favorite_color = colors,
-            titulo = titulo
+            titulo = titulo,
+            owner = request.user
         )
         obj1.save()
         sweetify.success(request, 'El libro se creo correctamente')
@@ -54,6 +59,7 @@ def edit_book(request, pk):
         selected_colors = []
         
     selected_colors = [int(x) for x in selected_colors]
+    print(request.POST)
     if request.method == 'POST':
         editorial = request.POST['editorial']
         state = request.POST['state']

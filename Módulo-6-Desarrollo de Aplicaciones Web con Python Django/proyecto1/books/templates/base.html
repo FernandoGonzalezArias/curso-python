@@ -15,6 +15,7 @@
         <section class="jumbotron">
             <h3>Books List</h3>
         {% if user.is_authenticated %}
+        <p> {{user.username}} </p>
           <a href="{% url 'logout' %}">Salir</a>
         {% else %}
           <a href="{% url 'login' %}">Login</a>

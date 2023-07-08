@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Book(models.Model):
@@ -15,7 +16,7 @@ class Book(models.Model):
     state = models.CharField(max_length=1, choices=STATUS, blank=True, default='a')
     
     TIPOS_BOOK = [
-        ('p', 'Pasta'),
+        ('P', 'Pasta'),
         ('D', 'Digital')
     ]
     
@@ -29,6 +30,8 @@ class Book(models.Model):
     )
     
     favorite_color = models.CharField(max_length=225, choices=COLORS, blank=True, default='')
+    
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
 
     class Meta:
