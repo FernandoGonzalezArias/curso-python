@@ -1,6 +1,25 @@
 {% extends 'bootstrap5/bootstrap5.html' %}
 
+{% load bootstrap5 %}
+{% load crispy_forms_tags %}
+
+
 {% block bootstrap5_content %}
-    <h1> New Product</h1>
+<h1> New Product</h1>
+<button class="btn btn-info">Test</button>
+<form action="">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{form.name|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{form.description|as_crispy_field}}
+            </div>
+        </div>
+    </div>
+</form>
 
 {% endblock %}
