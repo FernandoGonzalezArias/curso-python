@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <form role="form" method="post">
+    <h1 class="text-primary">Contacto</h1>
+    {% bootstrap_form form layout='inline' %}
+    </form>
+{% endblock %}
