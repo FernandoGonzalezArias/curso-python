@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container  m-5 pt-5">
+    <div class="row">
+        
+        <form class="row" action="{% url 'listado' %}" method="POST">
+            {% csrf_token %}
+            <div class="col-12">
+                {{form.marca|as_crispy_field}}
+            </div>
+            <div class="col-12">
+                {{form.categoria|as_crispy_field}}
+            </div>
+            <div class="col-12">
+                {{form.modelo|as_crispy_field}}
+            </div>
+            <div class="col-12">
+                {{form.serial_carroceria|as_crispy_field}}
+            </div>
+
+            <div class="col-12">
+                {{form.serial_motor|as_crispy_field}}
+            </div>
+            
+             <div class="col-12">
+                {{form.precio|as_crispy_field}}
+            </div>
+             <div class="col-12">
+                {{form.fecha_de_creacion|as_crispy_field}}
+            </div>
+             <div class="col-12">
+                {{form.fecha_de_modificacion|as_crispy_field}}
+            </div>
+            <div class="col-12 offset-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

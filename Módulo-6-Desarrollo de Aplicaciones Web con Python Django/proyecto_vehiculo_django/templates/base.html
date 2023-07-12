@@ -1,0 +1,39 @@
+{% extends 'bootstrap.html' %}
+
+{% load bootstrap5 %}
+
+{% block bootstrap5_content %}
+
+<div class="fixed-top">
+     <nav class="navbar navbar-expand-lg bg-black">
+         <div class="container-fluid">
+             <a class="navbar-brand text-light" href="#">Vehículos</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                 aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto">
+                     <a class="nav-link active text-light" aria-current="page" href="/">Inicio</a>
+                     <a class="nav-link text-light" href="/vehiculo/add">Agregar</a>
+                     <a class="nav-link text-light" href="/vehiculo/listado">Listar</a>
+                 </div>
+                 <div class="navbar-nav">
+                     <span class="nav-link text-light mx-2">Usuario: {{ user.username }}</span>
+                     {% if user.is_authenticated %}
+                         <a class="nav-link text-light" href="{% url 'logout' %}">Cerrar sesión</a>
+                     {% else %}
+                         <a class="nav-link text-light" href="{% url 'login' %}">Iniciar sesión</a>
+                     {% endif %}
+                 </div>
+             </div>
+         </div>
+     </nav>
+ </div>
+ 
+{% block content %}
+
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'bootstrap5/bootstrap5.html' %}
+
+{% load bootstrap5 %}
+{% load crispy_forms_tags %}
+
+
+{% block bootstrap5_content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h1>Formulario básico django HTML</h1>
+            <form action="">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <h1>Formulario Básico con Crispy</h1>
+        {% csrf_token %}
+        {{ form|crispy }}
+
+    </div>
+    <div class="row mt-5">
+        <h1>Formulario con Crispy as_cryspy_field</h1>
+        <form class="row g-3">
+            <div class="col-md-6">
+                {{form.email|as_crispy_field}}
+            </div>
+            <div class="col-md-6">
+                {{form.password|as_crispy_field}}
+            </div>
+            <div class="col-12">
+                {{form.address|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.state|as_crispy_field}}
+            </div>
+            <div class="col-12">
+                {{form.check_me|as_crispy_field}}
+                
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+

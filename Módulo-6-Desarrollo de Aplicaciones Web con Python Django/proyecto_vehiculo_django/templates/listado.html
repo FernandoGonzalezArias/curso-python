@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% csrf_token %}
+<div class="container m-5">
+    <div class="row">
+        <div class="col">
+            <br>
+            <br>
+            <h1>Listado de Vehículos</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Serial carroceria</th>
+                        <th>Serial motor</th>
+                        <th>Categoria</th>
+                        <th>Precio</th>
+                        
+                        <th>Condicion de precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vehiculo in vehiculos %}
+                    <tr>
+                        <td>{{vehiculo.marca}}</td>
+                        <td>{{vehiculo.modelo}}</td>
+                        <td>{{vehiculo.serial_carroceria}}</td>
+                        <td>{{vehiculo.serial_motor}}</td>
+                        <td>{{vehiculo.categoria}}</td>
+                        <td>{{vehiculo.precio}}</td>
+                        <td>{{vehiculo.condicion_precio}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
